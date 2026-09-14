@@ -9,7 +9,7 @@ $cell-border: 1px;
 $column-count: 7;
 $cell-gap: 1px;
 $calendar-padding: 10px;
-$transition-duration: 0.5s;
+$transition-duration: 200ms;
 $hover-color: #ffbfcb;
 $cell-color: #eee;
 $columns-width: $cell-size * $column-count;
@@ -46,10 +46,12 @@ body {
   }
 
   &__day {
+    position: relative;
     width: $cell-size;
     height: $cell-size;
     border: $cell-border solid #000;
     background-color: $cell-color;
+
     transition: all $transition-duration;
 
     display: flex;
@@ -61,7 +63,7 @@ body {
     &:hover {
       cursor: pointer;
       background-color: $hover-color;
-      transform: scale(0.9);
+      transform: translateY(-20px);
       z-index: 1;
     }
 
